@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:topinfoads6/screens/dashboard.dart';
 
+import 'screens/contatos/formularioContatos.dart';
 import 'screens/contatos/listaContatos.dart';
 
 const _blue = 0xff0038a8;
@@ -23,7 +24,7 @@ class Banco extends StatelessWidget {
         ),
       ),
       debugShowCheckedModeBanner: false,
-      home: ListaContatos(),
+      home: FormularioContatos(),
     );
   }
 }

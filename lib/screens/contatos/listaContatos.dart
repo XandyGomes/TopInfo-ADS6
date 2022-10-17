@@ -20,11 +20,21 @@ class ListaContatos extends StatelessWidget {
         children: [
           Card(
             child: ListTile(
-              title: Text('Alexandre'),
-              subtitle: Text('4689-8'),
+              title: Text(
+                'Alexandre',
+                style: TextStyle(fontSize: 24.0),
+              ),
+              subtitle: Text(
+                '4689-8',
+                style: TextStyle(fontSize: 16.0),
+              ),
             ),
           ),
         ],
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {},
+        child: Icon(Icons.add),
       ),
     );
   }

@@ -1,6 +1,9 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
+
+import 'contatos/listaContatos.dart';
 
 const _tituloAppbar = 'Dashboard';
 const _urlImage1 = 'images/bb.png';
@@ -39,30 +42,39 @@ class Dashboard extends StatelessWidget {
           ),
           Padding(
             padding: const EdgeInsets.all(8.0),
-            child: Container(
-              height: 100,
-              width: 150,
-              color: Color(_yellow),
-              child: Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Icon(
-                      Icons.people,
-                      color: Color(_blue),
-                      size: 30,
-                    ),
-                    Text(
-                      _tituloContainer,
-                      style: TextStyle(
+            child: InkWell(
+              onTap: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (context) => ListaContatos(),
+                  ),
+                );
+              },
+              child: Container(
+                height: 100,
+                width: 150,
+                color: Color(_yellow),
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Icon(
+                        Icons.people,
                         color: Color(_blue),
-                        fontSize: 20.0,
-                        fontWeight: FontWeight.bold,
+                        size: 30,
                       ),
-                    ),
-                  ],
+                      Text(
+                        _tituloContainer,
+                        style: TextStyle(
+                          color: Color(_blue),
+                          fontSize: 20.0,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
               ),
             ),
