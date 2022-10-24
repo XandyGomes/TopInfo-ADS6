@@ -24,7 +24,7 @@ class Banco extends StatelessWidget {
         ),
       ),
       debugShowCheckedModeBanner: false,
-      home: FormularioContatos(),
+      home: Dashboard(),
     );
   }
 }
