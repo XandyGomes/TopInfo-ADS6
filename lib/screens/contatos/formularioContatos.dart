@@ -62,7 +62,7 @@ class _FormularioContatosState extends State<FormularioContatos> {
                     final String name = _nameController.text;
                     final int? accountNumber =
                         int.tryParse(_accountNumberController.text);
-                    final Contato newContato = Contato(name, accountNumber!);
+                    final Contato newContato = Contato(0, name, accountNumber!);
                     Navigator.pop(context, newContato);
                   },
                 ),
