@@ -1,14 +1,25 @@
 import 'package:flutter/material.dart';
+import 'package:topinfoads6/database/app_database.dart';
 import 'package:topinfoads6/screens/dashboard.dart';
 
-import 'screens/contatos/formularioContatos.dart';
-import 'screens/contatos/listaContatos.dart';
+import 'models/contato.dart';
 
 const _blue = 0xff0038a8;
 
-void main() => runApp(
-      Banco(),
-    );
+void main() {
+  runApp(
+    Banco(),
+  );
+  save(Contato(0, 'Alexandre', 3265)).then(
+    (id) {
+      findAll().then(
+        (contatos) => debugPrint(
+          contatos.toString(),
+        ),
+      );
+    },
+  );
+}
 
 class Banco extends StatelessWidget {
   @override

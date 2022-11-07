@@ -27,3 +27,24 @@ Future<int> save(Contato contato) {
     },
   );
 }
+
+Future<List<Contato>> findAll() {
+  return createDatabase().then(
+    (db) {
+      return db.query('contatos').then(
+        (maps) {
+          final List<Contato> contatos = [];
+          for (Map<String, dynamic> map in maps) {
+            final Contato contato = Contato(
+              map['id'],
+              map['name'],
+              map['accountNumber'],
+            );
+            contatos.add(contato);
+          }
+          return contatos;
+        },
+      );
+    },
+  );
+}
