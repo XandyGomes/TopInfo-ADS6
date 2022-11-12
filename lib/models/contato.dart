@@ -1,5 +1,3 @@
-import 'dart:html';
-
 class Contato {
   final int id;
   final String name;

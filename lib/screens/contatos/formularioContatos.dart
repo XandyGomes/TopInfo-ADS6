@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:topinfoads6/models/contato.dart';
 
+import '../../database/app_database.dart';
+
 const _tituloAppbar = 'Novo Contato';
 
 class FormularioContatos extends StatefulWidget {
@@ -63,7 +65,7 @@ class _FormularioContatosState extends State<FormularioContatos> {
                     final int? accountNumber =
                         int.tryParse(_accountNumberController.text);
                     final Contato newContato = Contato(0, name, accountNumber!);
-                    Navigator.pop(context, newContato);
+                    save(newContato).then((id) => Navigator.pop(context));
                   },
                 ),
               ),

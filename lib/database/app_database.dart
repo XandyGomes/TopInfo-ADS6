@@ -20,7 +20,7 @@ Future<int> save(Contato contato) {
   return createDatabase().then(
     (db) {
       final Map<String, dynamic> contatoMap = Map();
-      contatoMap['id'] = contato.id;
+      // contatoMap['id'] = contato.id;
       contatoMap['name'] = contato.name;
       contatoMap['accountNumber'] = contato.accountNumber;
       return db.insert('contatos', contatoMap);
